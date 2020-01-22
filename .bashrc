@@ -138,3 +138,5 @@ export FZF_COMPLETION_OPTS='+c -x'
 # command for listing path candidates.
 
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git -E node_modules'
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

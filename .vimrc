@@ -37,9 +37,13 @@ Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'Valloric/YouCompleteMe'
 Plug 'mattn/emmet-vim'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'maximbaz/lightline-ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'https://github.com/xolox/vim-notes.git'
+Plug 'https://github.com/xolox/vim-misc.git'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -115,6 +119,8 @@ let g:ale_linters = {
 let g:ale_fixers = {
 \ 'css': ['prettier'],
 \ 'javascript': ['prettier'],
+\ 'typescript': ['prettier'],
+\ 'typescriptreact': ['prettier'],
 \ 'json': ['prettier']
 \}
 
@@ -176,13 +182,14 @@ let g:lightline = {
 \             [ 'readonly', 'filename', 'modified' ] ],
 \   'right': [ [ 'lineinfo' ],
 \              [ 'filetype' ],
+\              [ 'gutentags'],
 \              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
 \              [ 'gitbranch',  'gitgutter' ] ] 
 \ },
 \ 'component_function': {
+\   'gutentags': 'GutenTagsIsRunning',
 \   'gitbranch': 'GitBranchWithIcon',
 \   'bufferinfo': 'lightline#buffer#bufferinfo',
-\   'filename': 'FilenameForLightline',
 \   'gitgutter': 'GitStatus'
 \ },
 \  'linter_checking': 'lightline#ale#checking',
@@ -191,13 +198,13 @@ let g:lightline = {
 \  'linter_errors': 'lightline#ale#errors',
 \  'linter_ok': 'lightline#ale#ok',
 \  'colorscheme': 'wombat',
-\ 'component_expand': {
-\   'linter_checking': 'lightline#ale#checking',
-\   'linter_infos': 'lightline#ale#infos',
-\   'linter_warnings': 'lightline#ale#warnings',
-\   'linter_errors': 'lightline#ale#errors',
-\   'linter_ok': 'lightline#ale#ok'
-\ },
+\  'component_expand': {
+\    'linter_checking': 'lightline#ale#checking',
+\    'linter_infos': 'lightline#ale#infos',
+\    'linter_warnings': 'lightline#ale#warnings',
+\    'linter_errors': 'lightline#ale#errors',
+\    'linter_ok': 'lightline#ale#ok'
+\   },
 \ 'component_type': {
 \   'linter_checking': 'right',
 \   'linter_infos': 'right',
@@ -210,13 +217,17 @@ let g:lightline = {
 \ },
 \ }
 
-function! FilenameForLightline()
+function! FullPathname()
     return expand('%')
 endfunction
 
 function! GitBranchWithIcon()
   let branchName = fugitive#head()
   return ' ' . branchName
+endfunction
+
+function! GutenTagsIsRunning() 
+  return gutentags#statusline()
 endfunction
 
 
@@ -232,7 +243,7 @@ let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
 if !has('gui_running')
-  set t_Co=256
+set t_Co=256
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -246,3 +257,32 @@ highlight SignColumn ctermbg=0
 highlight GitGutterAdd    guifg=#009900 ctermfg=2 ctermbg=0
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3 ctermbg=0
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=0
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fuzzy Finder
+"
+
+nnoremap <Leader>t :BTags<CR>
+nnoremap <Leader>T :Tags<CR>
+nnoremap <C-p> :FZF<CR>
+nnoremap <Leader>g :G<CR>
+
+
+" [Buffers] Jump to the existing window if possible
+let g:fzf_buffers_jump = 1
+
+" [[B]Commits] Customize the options used by 'git log':
+let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(bold)%cr"'
+
+" [Tags] Command to generate tags file
+let g:fzf_tags_command = 'ctags'
+let g:gutentags_ctags_extra_args = ['-R', '--exclude=node_modules', '--exclude=package-lock.json']
+
+" command! -bang -nargs=* Rg
+"   \ call fzf#vim#grep(
+"   \   'rg --column --line-number --no-heading --color=always --smart-case'.shellescape(<q-args>), 1,
+"   \   fzf#vim#with_preview(), <bang>0)
+
+let g:gutentags_ctags_executable = '/snap/bin/ctags'
+
+let g:gutentags_ctags_tagfile = '.tags'

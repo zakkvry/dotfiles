@@ -140,3 +140,14 @@ export FZF_COMPLETION_OPTS='+c -x'
 export FZF_DEFAULT_COMMAND='fd --type f --hidden --follow --exclude .git -E node_modules'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+
+#############################################################
+# FFMPEG  ###################################################
+
+convert-to-mp3 () {
+  FILE_WITH_NEW_EXT="${1/.webm/.mp3}"
+  echo $FILE_WITH_NEW_EXT
+  ffmpeg -i "$(pwd)/$1" "$FILE_WITH_NEW_EXT"
+  mv "$FILE_WITH_NEW_EXT" ~/Music 
+}

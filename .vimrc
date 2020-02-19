@@ -1,16 +1,18 @@
-:set encoding=UTF-8
-:set nowrap
-:set linebreak
-:set tabstop=2
-:set shiftwidth=2
-:set expandtab
-:set autoindent
-:set smartindent
-:set autoread
-:set directory^=$HOME/.vim/tmp//
-:set noerrorbells visualbell t_vb=
+set encoding=UTF-8
+set nowrap
+set linebreak
+set tabstop=2
+set shiftwidth=2
+set expandtab
+set autoindent
+set smartindent
+set autoread
+set directory^=$HOME/.vim/tmp//
+set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set updatetime=100
+set hlsearch
+hi MatchParen cterm=none ctermbg=white ctermfg=blue
 
 " https://vi.stackexchange.com/questions/56/how-can-i-prevent-vim-from-leaving-too-many-files-like-swap-backup-undo
 autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
@@ -125,6 +127,10 @@ let g:ale_fixers = {
 \}
 
 let g:ale_fix_on_save = 1
+
+" TODO find better mappings
+" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+" nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement

@@ -58,3 +58,5 @@ PerfRecords
 tmux/
 .vscode
 .NERDTreeBookmarks
+.tags
+*.swp

@@ -1,3 +1,11 @@
+if !exists('g:os')
+    if has('win32') || has('win16')
+        let g:os = 'Windows'
+    else
+        let g:os = substitute(system('uname'), '\n', '', '')
+    endif
+endif
+
 set encoding=UTF-8
 set nowrap
 set linebreak
@@ -20,6 +28,7 @@ autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
 
 imap <C-Return> <CR><CR><C-o>k<Tab>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <Leader><space> :noh<CR>
 
 call plug#begin('~/.vim/plugged')
 Plug 'ryanoasis/vim-devicons'
@@ -56,6 +65,44 @@ let delimitMate_expand_cr = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
 "
+" NERDTrees File highlighting
+function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
+  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+endfunction
+
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
+call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+
+" NERDTrees File highlighting only the glyph/icon
+" test highlight just the glyph (icons) in nerdtree:
+autocmd filetype nerdtree highlight haskell_icon ctermbg=none ctermfg=Red guifg=#ffa500
+autocmd filetype nerdtree highlight html_icon ctermbg=none ctermfg=Red guifg=#ffa500
+autocmd filetype nerdtree highlight go_icon ctermbg=none ctermfg=Red guifg=#ffa500
+
+autocmd filetype nerdtree syn match haskell_icon ## containedin=NERDTreeFile
+
+" if you are using another syn highlight for a given line (e.g.
+" NERDTreeHighlightFile) need to give that name in the 'containedin' for this
+" other highlight to work with it
+autocmd filetype nerdtree syn match html_icon ##
+containedin=NERDTreeFile,html
+autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFile
+
 autocmd vimenter * NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
@@ -149,7 +196,7 @@ vnoremap <C-k> :m '<-2<Return>gv=gv
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Line numbers
 
-:set number              " show line numbersa
+set number              " show line numbersa
 
 highlight LineNr ctermfg=grey
 
@@ -224,7 +271,7 @@ let g:lightline = {
 \ }
 
 function! FullPathname()
-    return expand('%')
+    return expand('%f')
 endfunction
 
 function! GitBranchWithIcon()
@@ -249,7 +296,7 @@ let g:lightline#ale#indicator_errors = "\uf05e"
 let g:lightline#ale#indicator_ok = "\uf00c"
 
 if !has('gui_running')
-set t_Co=256
+  set t_Co=256
 endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -273,6 +320,9 @@ nnoremap <Leader>T :Tags<CR>
 nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>g :G<CR>
 
+if g:os == 'Linux'
+  let g:gutentags_ctags_executable = '/snap/bin/ctags'
+endif
 
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1

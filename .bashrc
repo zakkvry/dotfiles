@@ -2,6 +2,12 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+# homebrew
+PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"; export PATH
+
+# remap caps lock to additional control key
+setxkbmap -option caps:ctrl_modifier
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;

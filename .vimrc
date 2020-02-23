@@ -6,6 +6,8 @@ if !exists('g:os')
     endif
 endif
 
+set background=dark
+set t_Co=256
 set encoding=UTF-8
 set nowrap
 set linebreak
@@ -28,6 +30,7 @@ autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
 
 imap <C-Return> <CR><CR><C-o>k<Tab>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
+nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader><space> :noh<CR>
 
 call plug#begin('~/.vim/plugged')
@@ -55,7 +58,13 @@ Plug 'maximbaz/lightline-ale'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
+
+
+let g:comfortable_motion_scroll_down_key = "j"
+let g:comfortable_motion_scroll_up_key = "k"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimMate
@@ -99,8 +108,7 @@ autocmd filetype nerdtree syn match haskell_icon ## containedin=NERDTreeFile
 " if you are using another syn highlight for a given line (e.g.
 " NERDTreeHighlightFile) need to give that name in the 'containedin' for this
 " other highlight to work with it
-autocmd filetype nerdtree syn match html_icon ##
-containedin=NERDTreeFile,html
+autocmd filetype nerdtree syn match html_icon ## containedin=NERDTreeFile,html
 autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFile
 
 autocmd vimenter * NERDTree
@@ -113,13 +121,17 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 function MyNerdToggle()
     if &filetype == 'nerdtree' || exists("g:NERDTree") && g:NERDTree.IsOpen()
-        :NERDTreeToggle
+        :NERDTreeTabsToggle
     else
         :NERDTreeFind
     endif
 endfunction
 
-nnoremap <C-B> :call MyNerdToggle()<CR>
+nnoremap <C-B> :NERDTreeTabsToggle<CR>
+
+let g:nerdtree_tabs_focus_on_files = 1
+let g:NERDTreeTabsToggle = 1
+let g:nerdtree_tabs_autofind = 1
 
 let g:NERDTreeWinSize=40
 
@@ -230,47 +242,48 @@ let javaScript_fold=1 "activate folding by JS syntax
 :set noshowmode
 
 let g:lightline = {
-\ 'active': {
-\   'left': [ [ 'mode', 'paste' ],
-\             [ 'readonly', 'filename', 'modified' ] ],
-\   'right': [ [ 'lineinfo' ],
-\              [ 'filetype' ],
-\              [ 'gutentags'],
-\              [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
-\              [ 'gitbranch',  'gitgutter' ] ] 
-\ },
-\ 'component_function': {
-\   'gutentags': 'GutenTagsIsRunning',
-\   'gitbranch': 'GitBranchWithIcon',
-\   'bufferinfo': 'lightline#buffer#bufferinfo',
-\   'gitgutter': 'GitStatus'
-\ },
-\  'linter_checking': 'lightline#ale#checking',
-\  'linter_infos': 'lightline#ale#infos',
-\  'linter_warnings': 'lightline#ale#warnings',
-\  'linter_errors': 'lightline#ale#errors',
-\  'linter_ok': 'lightline#ale#ok',
-\  'colorscheme': 'wombat',
-\  'component_expand': {
+\   'active': {
+\     'left': [ [ 'mode', 'paste' ],
+\               [ 'readonly', 'relpathname', 'modified' ] ],
+\     'right': [ [ 'lineinfo' ],
+\                [ 'filetype' ],
+\                [ 'gutentags'],
+\                [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
+\                [ 'gitbranch',  'gitgutter' ] ] 
+\   },
+\   'component_function': {
+\     'gutentags': 'GutenTagsIsRunning',
+\     'relpathname': 'RelPathname',
+\     'gitbranch': 'GitBranchWithIcon',
+\     'bufferinfo': 'lightline#buffer#bufferinfo',
+\     'gitgutter': 'GitStatus'
+\   },
 \    'linter_checking': 'lightline#ale#checking',
 \    'linter_infos': 'lightline#ale#infos',
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
-\    'linter_ok': 'lightline#ale#ok'
+\    'linter_ok': 'lightline#ale#ok',
+\    'colorscheme': 'wombat',
+\    'component_expand': {
+\      'linter_checking': 'lightline#ale#checking',
+\      'linter_infos': 'lightline#ale#infos',
+\      'linter_warnings': 'lightline#ale#warnings',
+\      'linter_errors': 'lightline#ale#errors',
+\      'linter_ok': 'lightline#ale#ok'
+\     },
+\   'component_type': {
+\     'linter_checking': 'right',
+\     'linter_infos': 'right',
+\     'linter_warnings': 'warning',
+\     'linter_errors': 'error',
+\     'linter_ok': 'right'
 \   },
-\ 'component_type': {
-\   'linter_checking': 'right',
-\   'linter_infos': 'right',
-\   'linter_warnings': 'warning',
-\   'linter_errors': 'error',
-\   'linter_ok': 'right'
-\ },
-\ 'component': {
-\   'separator': '',
-\ },
+\   'component': {
+\     'separator': '',
+\   }
 \ }
 
-function! FullPathname()
+function! RelPathname()
     return expand('%f')
 endfunction
 

@@ -59,12 +59,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
 Plug 'jistr/vim-nerdtree-tabs'
-Plug 'yuttie/comfortable-motion.vim'
 call plug#end()
-
-
-let g:comfortable_motion_scroll_down_key = "j"
-let g:comfortable_motion_scroll_up_key = "k"
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimMate
@@ -121,7 +116,7 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTree
 
 function MyNerdToggle()
     if &filetype == 'nerdtree' || exists("g:NERDTree") && g:NERDTree.IsOpen()
-        :NERDTreeTabsToggle
+        :NERDTreeToggle
     else
         :NERDTreeFind
     endif
@@ -133,7 +128,7 @@ let g:nerdtree_tabs_focus_on_files = 1
 let g:NERDTreeTabsToggle = 1
 let g:nerdtree_tabs_autofind = 1
 
-let g:NERDTreeWinSize=40
+let g:NERDTreeWinSize=65
 
 " https://vi.stackexchange.com/questions/22398/disable-lightline-on-nerdtree
 augroup filetype_nerdtree
@@ -148,7 +143,7 @@ fu s:disable_lightline_on_nerdtree() abort
 endfu
 
 " nerdtree-git-plugin
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeIndicatorMapCustoD = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
     \ "Untracked" : "✭",

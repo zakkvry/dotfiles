@@ -32,6 +32,7 @@ imap <C-Return> <CR><CR><C-o>k<Tab>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <Leader>b :Buffers<CR>
 nnoremap <Leader><space> :noh<CR>
+nnoremap * *N
 
 call plug#begin('~/.vim/plugged')
 Plug 'ryanoasis/vim-devicons'
@@ -59,6 +60,7 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
 Plug 'jistr/vim-nerdtree-tabs'
+Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""

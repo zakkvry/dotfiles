@@ -6,6 +6,8 @@ if !exists('g:os')
     endif
 endif
 
+set timeoutlen=1000
+set ttimeoutlen=0
 set background=dark
 set t_Co=256
 set encoding=UTF-8
@@ -22,6 +24,7 @@ set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
 set updatetime=100
 set hlsearch
+set shortmess-=S
 hi MatchParen cterm=none ctermbg=white ctermfg=blue
 
 " https://vi.stackexchange.com/questions/56/how-can-i-prevent-vim-from-leaving-too-many-files-like-swap-backup-undo
@@ -31,42 +34,63 @@ autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
 imap <C-Return> <CR><CR><C-o>k<Tab>
 nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>
 nnoremap <Leader>b :Buffers<CR>
+" close all buffers but the current once
+nnoremap <Leader>B :w <bar> %bd <bar> e# <bar> Buffers<CR> 
 nnoremap <Leader><space> :noh<CR>
+nnoremap <Leader>s :mksession! ./.vim/session.vim<CR>
 nnoremap * *N
+noremap <A-Left>  :tabmove -1<CR>
+noremap <A-Right> :tabmove +3<CR>
+
+if g:os == "Darwin"
+
+  " relative path  (src/foo.txt)
+  nnoremap <leader>cf :let @*=expand("%")<CR>
+
+  " absolute path  (/something/src/foo.txt)
+  nnoremap <leader>cF :let @*=expand("%:p")<CR>
+
+  " filename       (foo.txt)
+  nnoremap <leader>ct :let @*=expand("%:t")<CR>
+
+  " directory name (/something/src)
+  nnoremap <leader>ch :let @*=expand("%:p:h")<CR>
+endif
 
 call plug#begin('~/.vim/plugged')
-Plug 'ryanoasis/vim-devicons'
+Plug 'google/vim-searchindex'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-sensible'
-Plug 'tpope/vim-vinegar'
+" Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
-Plug 'low-ghost/nerdtree-fugitive'
+" Plug 'low-ghost/nerdtree-fugitive'
 Plug 'itchyny/lightline.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'pangloss/vim-javascript'
-Plug 'MaxMEllon/vim-jsx-pretty'
+" Plug 'pangloss/vim-javascript'
+" Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'tpope/vim-surround'
 Plug 'https://github.com/airblade/vim-gitgutter.git'
 Plug 'dense-analysis/ale'
 Plug 'preservim/nerdtree'
 Plug 'Valloric/YouCompleteMe'
-Plug 'mattn/emmet-vim'
+" Plug 'mattn/emmet-vim'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'maximbaz/lightline-ale'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+" Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
-Plug 'jistr/vim-nerdtree-tabs'
+" Plug 'jistr/vim-nerdtree-tabs'
 Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimMate
 
-let delimitMate_expand_cr = 1
+" let delimitMate_expand_cr = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " NERDTree
@@ -77,38 +101,22 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
   exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('md', 'white', 'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'LightMagenta', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
-call NERDTreeHighlightFile('ds_store', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('js', 'LightRed', 'none', '#ffa500', '#151515')
+call NERDTreeHighlightFile('ts', 'Blue', 'none', '#013acc', '#151515')
+call NERDTreeHighlightFile('tsx', 'LightBlue', 'none', '#65DBFB', '#151515')
 call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151518')
 call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
 call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+call NERDTreeHighlightFile('log', 'Red', 'none', 'Red', '#151515')
 
-" NERDTrees File highlighting only the glyph/icon
-" test highlight just the glyph (icons) in nerdtree:
-autocmd filetype nerdtree highlight haskell_icon ctermbg=none ctermfg=Red guifg=#ffa500
-autocmd filetype nerdtree highlight html_icon ctermbg=none ctermfg=Red guifg=#ffa500
-autocmd filetype nerdtree highlight go_icon ctermbg=none ctermfg=Red guifg=#ffa500
-
-autocmd filetype nerdtree syn match haskell_icon ## containedin=NERDTreeFile
-
-" if you are using another syn highlight for a given line (e.g.
-" NERDTreeHighlightFile) need to give that name in the 'containedin' for this
-" other highlight to work with it
-autocmd filetype nerdtree syn match html_icon ## containedin=NERDTreeFile,html
-autocmd filetype nerdtree syn match go_icon ## containedin=NERDTreeFile
-
-autocmd vimenter * NERDTree
+" autocmd vimenter * NERDTree
 let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 
@@ -124,13 +132,13 @@ function MyNerdToggle()
     endif
 endfunction
 
-nnoremap <C-B> :NERDTreeTabsToggle<CR>
+nnoremap <C-B> :call MyNerdToggle()<CR>
 
-let g:nerdtree_tabs_focus_on_files = 1
-let g:NERDTreeTabsToggle = 1
-let g:nerdtree_tabs_autofind = 1
+" let g:nerdtree_tabs_focus_on_files = 1
+" let g:NERDTreeTabsToggle = 1
+" let g:nerdtree_tabs_autofind = 1
 
-let g:NERDTreeWinSize=65
+let g:NERDTreeWinSize=75
 
 " https://vi.stackexchange.com/questions/22398/disable-lightline-on-nerdtree
 augroup filetype_nerdtree
@@ -145,18 +153,18 @@ fu s:disable_lightline_on_nerdtree() abort
 endfu
 
 " nerdtree-git-plugin
-let g:NERDTreeIndicatorMapCustoD = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+" let g:NERDTreeIndicatorMapCustoD = {
+"     \ "Modified"  : "✹",
+"     \ "Staged"    : "✚",
+"     \ "Untracked" : "✭",
+"     \ "Renamed"   : "➜",
+"     \ "Unmerged"  : "═",
+"     \ "Deleted"   : "✖",
+"     \ "Dirty"     : "✗",
+"     \ "Clean"     : "✔︎",
+"     \ 'Ignored'   : '☒',
+"     \ "Unknown"   : "?"
+"     \ }
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -187,6 +195,9 @@ let g:ale_fix_on_save = 1
 " TODO find better mappings
 " nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 " nmap <silent> <C-j> <Plug>(ale_next_wrap)
+"
+
+nnoremap <Leader>p :ALEFix<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Movement
@@ -226,11 +237,11 @@ let g:javascript_plugin_flow = 1    " allow Flow in .js files
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript folding
-
-:set foldmethod=syntax "syntax highlighting items specify folds
-" :set foldcolumn=1 "defines 1 col at window left, to indicate folding
-:set foldlevelstart=99 "start file with all folds opened
-let javaScript_fold=1 "activate folding by JS syntax
+" extreme performance degradation?
+" :set foldmethod=syntax "syntax highlighting items specify folds
+" " :set foldcolumn=1 "defines 1 col at window left, to indicate folding
+" :set foldlevelstart=99 "start file with all folds opened
+" let javaScript_fold=1 "activate folding by JS syntax
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -238,10 +249,11 @@ let javaScript_fold=1 "activate folding by JS syntax
 
 :set noshowmode
 
+" color theme  alternatives: wombat, seoul256, nord, tomorrow, seoul256
 let g:lightline = {
 \   'active': {
 \     'left': [ [ 'mode', 'paste' ],
-\               [ 'readonly', 'relpathname', 'modified' ] ],
+\               [ 'readonly', 'relpathname' ] ],
 \     'right': [ [ 'lineinfo' ],
 \                [ 'filetype' ],
 \                [ 'gutentags'],
@@ -260,7 +272,7 @@ let g:lightline = {
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
 \    'linter_ok': 'lightline#ale#ok',
-\    'colorscheme': 'wombat',
+\    'colorscheme': 'nord',
 \    'component_expand': {
 \      'linter_checking': 'lightline#ale#checking',
 \      'linter_infos': 'lightline#ale#infos',
@@ -277,21 +289,41 @@ let g:lightline = {
 \   },
 \   'component': {
 \     'separator': '',
-\   }
+\   },
+\   'mode_map': {
+\     'n' : 'N',
+\     'i' : 'I',
+\     'R' : 'R',
+\     'v' : 'V',
+\     'V' : 'VL',
+\     "\<C-v>": 'VB',
+\     'c' : 'C',
+\     's' : 'S',
+\     'S' : 'SL',
+\     "\<C-s>": 'SB',
+\     't': 'T',
+\   },
 \ }
 
+
+
 function! RelPathname()
-    return expand('%f')
+  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let modified = &modified ? ' +' : ''
+  return filename . modified  
 endfunction
 
 function! GitBranchWithIcon()
-  let branchName = fugitive#head()
-  return ' ' . branchName
+  if exists('*FugitiveHead')
+    let branch = FugitiveHead()
+    return branch !=# '' ? ' '.branch : ''
+  endif
+  return ''
 endfunction
 
-function! GutenTagsIsRunning() 
-  return gutentags#statusline()
-endfunction
+" function! GutenTagsIsRunning() 
+"   return gutentags#statusline()
+" endfunction
 
 
 function! GitStatus()
@@ -299,11 +331,11 @@ function! GitStatus()
   return printf('+%d ~%d -%d', a, m, r)
 endfunction
 
-let g:lightline#ale#indicator_checking = "\uf110"
-let g:lightline#ale#indicator_infos = "\uf129"
-let g:lightline#ale#indicator_warnings = "\uf071"
-let g:lightline#ale#indicator_errors = "\uf05e"
-let g:lightline#ale#indicator_ok = "\uf00c"
+let g:lightline#ale#indicator_checking = "\uf110 "
+let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_ok = "\uf00c "
 
 if !has('gui_running')
   set t_Co=256
@@ -329,6 +361,7 @@ nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
 nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>g :G<CR>
+nnoremap <Leader>f :Rg<CR>
 
 if g:os == 'Linux'
   let g:gutentags_ctags_executable = '/snap/bin/ctags'
@@ -344,11 +377,17 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 let g:fzf_tags_command = 'ctags'
 let g:gutentags_ctags_extra_args = ['-R', '--exclude=node_modules', '--exclude=package-lock.json']
 
-" command! -bang -nargs=* Rg
-"   \ call fzf#vim#grep(
-"   \   'rg --column --line-number --no-heading --color=always --smart-case'.shellescape(<q-args>), 1,
-"   \   fzf#vim#with_preview(), <bang>0)
-
-let g:gutentags_ctags_executable = '/snap/bin/ctags'
-
 let g:gutentags_ctags_tagfile = '.tags'
+
+" --column: Show column number
+ " --line-number: Show line number
+ " --no-heading: Do not show file headings in results
+ " --fixed-strings: Search term as a literal string
+ " --ignore-case: Case insensitive search
+ " --no-ignore: Do not respect .gitignore, etc...
+ " --hidden: Search hidden files and folders
+ " --follow: Follow symlinks
+ " --glob: Additional conditions for search (in this case ignore everything
+ " in the .git/ folder)
+ " --color: Search color options
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow--glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

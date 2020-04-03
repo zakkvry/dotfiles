@@ -85,6 +85,7 @@ Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
 " Plug 'jistr/vim-nerdtree-tabs'
 Plug 'leafgarland/typescript-vim'
+Plug 'mhinz/vim-startify'
 call plug#end()
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -141,16 +142,16 @@ nnoremap <C-B> :call MyNerdToggle()<CR>
 let g:NERDTreeWinSize=75
 
 " https://vi.stackexchange.com/questions/22398/disable-lightline-on-nerdtree
-augroup filetype_nerdtree
-    au!
-    au FileType nerdtree call s:disable_lightline_on_nerdtree()
-    au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
-augroup END
+" augroup filetype_nerdtree
+"     au!
+"     au FileType nerdtree call s:disable_lightline_on_nerdtree()
+"     au WinEnter,BufWinEnter,TabEnter * call s:disable_lightline_on_nerdtree()
+" augroup END
 
-fu s:disable_lightline_on_nerdtree() abort
-    let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
-    call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
-endfu
+" fu s:disable_lightline_on_nerdtree() abort
+"     let nerdtree_winnr = index(map(range(1, winnr('$')), {_,v -> getbufvar(winbufnr(v), '&ft')}), 'nerdtree') + 1
+"     call timer_start(0, {-> nerdtree_winnr && setwinvar(nerdtree_winnr, '&stl', '%#Normal#')})
+" endfu
 
 " nerdtree-git-plugin
 " let g:NERDTreeIndicatorMapCustoD = {
@@ -169,6 +170,10 @@ endfu
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Ale Linting
+"
+
+highlight ALEError ctermbg=none cterm=underline
+highlight ALEEWarning ctermbg=none cterm=underline
 
 let g:ale_statusline_format = ['x %d', '! %d', 'ok']
 " let g:ale_sign_error = 'x'
@@ -272,7 +277,7 @@ let g:lightline = {
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
 \    'linter_ok': 'lightline#ale#ok',
-\    'colorscheme': 'nord',
+\    'colorscheme': 'Tomorrow_Night',
 \    'component_expand': {
 \      'linter_checking': 'lightline#ale#checking',
 \      'linter_infos': 'lightline#ale#infos',

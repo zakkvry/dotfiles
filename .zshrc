@@ -108,12 +108,13 @@ export NVM_DIR="$HOME/.nvm"
 
 #############################################################
 # FZF #######################################################
-
+export BAT_THEME="gruvbox"
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
 
 # Options to fzf command
 export FZF_COMPLETION_OPTS='+c -x'
+export FZF_DEFAULT_OPTS='--reverse --info=inline --border'
 
 # Use fd (https://github.com/sharkdp/fd) instead of the default find
 # command for listing path candidates.
@@ -145,5 +146,5 @@ convert-to-mp3 () {
 
 fpath+=$HOME/.zsh/pure
 
-autoload -U promptinit; promptinit
-prompt pure
+# autoload -U promptinit; promptinit
+# prompt pure

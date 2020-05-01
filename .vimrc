@@ -37,7 +37,7 @@ nnoremap <Leader>b :Buffers<CR>
 " close all buffers but the current once
 nnoremap <Leader>B :w <bar> %bd <bar> e# <bar> Buffers<CR> 
 nnoremap <Leader><space> :noh<CR>
-nnoremap <Leader>s :mksession! ./.vim/session.vim<CR>
+nnoremap <Leader>S :mksession! ./.vim/session.vim<CR>
 nnoremap * *N
 noremap <A-Left>  :tabmove -1<CR>
 noremap <A-Right> :tabmove +3<CR>
@@ -59,7 +59,7 @@ endif
 
 call plug#begin('~/.vim/plugged')
 Plug 'google/vim-searchindex'
-" Plug 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-sensible'
 " Plug 'tpope/vim-vinegar'
@@ -84,9 +84,16 @@ Plug 'maximbaz/lightline-ale'
 Plug 'https://github.com/xolox/vim-notes.git'
 Plug 'https://github.com/xolox/vim-misc.git'
 " Plug 'jistr/vim-nerdtree-tabs'
-Plug 'leafgarland/typescript-vim'
+" Plug 'leafgarland/typescript-vim'
 Plug 'mhinz/vim-startify'
+
+" Color schemes
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'sonph/onehalf'
+Plug 'morhetz/gruvbox'
 call plug#end()
+
+colorscheme gruvbox
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimMate
@@ -197,10 +204,8 @@ let g:ale_fixers = {
 
 let g:ale_fix_on_save = 1
 
-" TODO find better mappings
-" nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-" nmap <silent> <C-j> <Plug>(ale_next_wrap)
-"
+nnoremap [a :ALEPrevious<CR>
+nnoremap ]a :ALENext<CR>
 
 nnoremap <Leader>p :ALEFix<CR>
 
@@ -240,6 +245,24 @@ let g:javascript_plugin_flow = 1    " allow Flow in .js files
 :set splitbelow          " open split panes on bottom (instead of top)
 :set splitright          " open split panes on right (instead of left)
 
+
+function! ToggleWindowHorizontalVerticalSplit()
+  if !exists('t:splitType')
+    let t:splitType = 'vertical'
+  endif
+
+  if t:splitType == 'vertical' " is vertical switch to horizontal
+    windo wincmd K
+    let t:splitType = 'horizontal'
+
+  else " is horizontal switch to vertical
+    windo wincmd H
+    let t:splitType = 'vertical'
+  endif
+endfunction
+
+nnoremap <silent> <leader>wt :call ToggleWindowHorizontalVerticalSplit()<cr>
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " JavaScript folding
 " extreme performance degradation?
@@ -265,6 +288,9 @@ let g:lightline = {
 \                [ 'linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok' ],
 \                [ 'gitbranch',  'gitgutter' ] ] 
 \   },
+\   'inactive': {
+\     'left': [ ["relpathname"] ] 
+\   },
 \   'component_function': {
 \     'gutentags': 'GutenTagsIsRunning',
 \     'relpathname': 'RelPathname',
@@ -277,7 +303,7 @@ let g:lightline = {
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
 \    'linter_ok': 'lightline#ale#ok',
-\    'colorscheme': 'Tomorrow_Night',
+\    'colorscheme': 'default',
 \    'component_expand': {
 \      'linter_checking': 'lightline#ale#checking',
 \      'linter_infos': 'lightline#ale#infos',
@@ -293,7 +319,7 @@ let g:lightline = {
 \     'linter_ok': 'right'
 \   },
 \   'component': {
-\     'separator': '',
+\     'separator': ' ',
 \   },
 \   'mode_map': {
 \     'n' : 'N',
@@ -313,7 +339,8 @@ let g:lightline = {
 
 
 function! RelPathname()
-  let filename = expand('%:t') !=# '' ? expand('%:t') : '[No Name]'
+  let filename = expand('%') != '' ? expand('%') : '[No Name]'
+  " let filename = len(filename) > 70 ? "..." . filename[-70:] : filename
   let modified = &modified ? ' +' : ''
   return filename . modified  
 endfunction
@@ -364,9 +391,11 @@ highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=0
 
 nnoremap <Leader>t :BTags<CR>
 nnoremap <Leader>T :Tags<CR>
-nnoremap <C-p> :FZF<CR>
+nnoremap <C-p> :call Fzf_dev()<CR>
 nnoremap <Leader>g :G<CR>
 nnoremap <Leader>f :Rg<CR>
+nnoremap <Leader>F :RgStrict<CR>
+nnoremap <Leader>s :FZFLines<CR>
 
 if g:os == 'Linux'
   let g:gutentags_ctags_executable = '/snap/bin/ctags'
@@ -381,18 +410,80 @@ let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %
 " [Tags] Command to generate tags file
 let g:fzf_tags_command = 'ctags'
 let g:gutentags_ctags_extra_args = ['-R', '--exclude=node_modules', '--exclude=package-lock.json']
-
+let g:fzf_history_dir = '~/.local/share/fzf-history'
 let g:gutentags_ctags_tagfile = '.tags'
+let g:fzf_layout = { 'down': '~70%' }
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
 
-" --column: Show column number
- " --line-number: Show line number
- " --no-heading: Do not show file headings in results
- " --fixed-strings: Search term as a literal string
- " --ignore-case: Case insensitive search
- " --no-ignore: Do not respect .gitignore, etc...
- " --hidden: Search hidden files and folders
- " --follow: Follow symlinks
- " --glob: Additional conditions for search (in this case ignore everything
- " in the .git/ folder)
- " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow--glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Rg
+ \ call fzf#vim#grep(
+ \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+ \   fzf#vim#with_preview(), <bang>0)
+
+command! -bang -nargs=* RgStrict
+ \ call fzf#vim#grep(
+ \   'rg --column --line-number --no-heading --color "always" --smart-case --ignore-case --follow  --glob "!{.git/*,**/__tests__/*,**/test/*,**/test/*,node_modules/*,*.lock,**/__*}" '.shellescape(<q-args>).'| tr -d "\021"', 1,
+ \   fzf#vim#with_preview(), <bang>0)
+
+
+" Files + devicons
+function! Fzf_dev()
+  let l:fzf_files_options = '--preview "bat --style=numbers,changes --color always {2..-1} | head -'.&lines.'"'
+
+  function! s:files()
+    let l:files = split(system($FZF_DEFAULT_COMMAND), '\n')
+    return s:prepend_icon(l:files)
+  endfunction
+
+  function! s:prepend_icon(candidates)
+    let l:result = []
+    for l:candidate in a:candidates
+      let l:filename = fnamemodify(l:candidate, ':p:t')
+      let l:icon = WebDevIconsGetFileTypeSymbol(l:filename, isdirectory(l:filename))
+      call add(l:result, printf('%s %s', l:icon, l:candidate))
+    endfor
+
+    return l:result
+  endfunction
+
+  function! s:edit_file(item)
+    let l:pos = stridx(a:item, ' ')
+    let l:file_path = a:item[pos+1:-1]
+    execute 'silent e' l:file_path
+  endfunction
+
+  call fzf#run({
+        \ 'source': <sid>files(),
+        \ 'sink':   function('s:edit_file'),
+        \ 'options': '-m ' . l:fzf_files_options,
+        \ 'down':    '40%' })
+endfunction
+
+" Search in open buffers
+function! s:line_handler(l)
+  let keys = split(a:l, ':\t')
+  exec 'buf' keys[0]
+  exec keys[1]
+  normal! ^zz
+endfunction
+
+function! s:buffer_lines()
+  let res = []
+  for b in filter(range(1, bufnr('$')), 'buflisted(v:val)')
+    call extend(res, map(getbufline(b,0,"$"), 'b . ":\t" . (v:key + 1) . ":\t" . v:val '))
+  endfor
+  return res
+endfunction
+
+command! FZFLines call fzf#run({
+\   'source':  <sid>buffer_lines(),
+\   'sink':    function('<sid>line_handler'),
+\   'options': '--extended --nth=3..',
+\   'down':    '60%'
+\})
+

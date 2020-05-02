@@ -3,6 +3,7 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
+export PATH=$PATH:/usr/local/go/bin
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -72,6 +73,9 @@ plugins=(git node npm nvm tmux)
 
 source $ZSH/oh-my-zsh.sh
 
+# remap caps lock to additional control key
+# setxkbmap -option caps:ctrl_modifier
+
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -128,6 +132,10 @@ convert-to-mp3 () {
   echo $FILE_WITH_NEW_EXT
   ffmpeg -i "$(pwd)/$1" "$FILE_WITH_NEW_EXT"
   mv "$FILE_WITH_NEW_EXT" ~/Music 
+}
+
+vpn () {
+  sudo protonvpn -f c
 }
 
 

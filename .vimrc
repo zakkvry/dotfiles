@@ -368,10 +368,6 @@ nnoremap <C-p> :FZF<CR>
 nnoremap <Leader>g :G<CR>
 nnoremap <Leader>f :Rg<CR>
 
-if g:os == 'Linux'
-  let g:gutentags_ctags_executable = '/snap/bin/ctags'
-endif
-
 " [Buffers] Jump to the existing window if possible
 let g:fzf_buffers_jump = 1
 

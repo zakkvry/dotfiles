@@ -6,6 +6,7 @@ if !exists('g:os')
     endif
 endif
 
+set foldcolumn=1
 set timeoutlen=1000
 set ttimeoutlen=0
 set background=dark
@@ -91,9 +92,15 @@ Plug 'mhinz/vim-startify'
 " Plug 'arcticicestudio/nord-vim'
 " Plug 'sonph/onehalf'
 Plug 'morhetz/gruvbox'
+Plug 'easymotion/vim-easymotion'
 call plug#end()
 
+" set Vim-specific sequences for RGB colors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 colorscheme gruvbox
+autocmd vimenter * hi Normal guibg=NONE ctermbg=NONE
+highlight NonText ctermbg=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " delimMate
@@ -104,25 +111,26 @@ colorscheme gruvbox
 " NERDTree
 "
 " NERDTrees File highlighting
-function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
-  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
+function! NERDTreeHighlightFile(extension, fg, bg, guifg)
+  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guifg='. a:guifg
   exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 endfunction
 
-call NERDTreeHighlightFile('md', 'white', 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('json', 'LightMagenta', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
-call NERDTreeHighlightFile('js', 'LightRed', 'none', '#ffa500', '#151515')
-call NERDTreeHighlightFile('ts', 'Blue', 'none', '#013acc', '#151515')
-call NERDTreeHighlightFile('tsx', 'LightBlue', 'none', '#65DBFB', '#151515')
-call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('gitignore', 'Gray', 'none', '#686868', '#151518')
-call NERDTreeHighlightFile('bashrc', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', '#686868', '#151515')
-call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
-call NERDTreeHighlightFile('log', 'Red', 'none', 'Red', '#151515')
+call NERDTreeHighlightFile('md', 'white', 'none', 'white')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow')
+call NERDTreeHighlightFile('json', 'LightMagenta', 'none', 'LightMagenta')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow')
+call NERDTreeHighlightFile('js', 'LightRed', 'none', 'LightRed')
+call NERDTreeHighlightFile('ts', 'Blue', 'none', 'Blue')
+call NERDTreeHighlightFile('tsx', 'LightBlue', 'none', 'LightBlue')
+call NERDTreeHighlightFile('gitconfig', 'Gray', 'none', 'Gray')
+call NERDTreeHighlightFile('gitignore', 'Gray', 'none', 'Gray')
+call NERDTreeHighlightFile('bashrc', 'Gray', 'none', 'Gray')
+call NERDTreeHighlightFile('bashprofile', 'Gray', 'none', 'Gray')
+call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan')
+call NERDTreeHighlightFile('log', 'Red', 'none', 'Red')
+call NERDTreeHighlightFile('rs', 'DarkYellow', 'none', 'DarkYellow')
 
 " autocmd vimenter * NERDTree
 let NERDTreeMinimalUI = 1
@@ -199,7 +207,8 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
-\ 'json': ['prettier']
+\ 'json': ['prettier'],
+\ 'rust': ['rustfmt']
 \}
 
 let g:ale_fix_on_save = 1
@@ -303,7 +312,7 @@ let g:lightline = {
 \    'linter_warnings': 'lightline#ale#warnings',
 \    'linter_errors': 'lightline#ale#errors',
 \    'linter_ok': 'lightline#ale#ok',
-\    'colorscheme': 'default',
+\    'colorscheme': 'gruvbox',
 \    'component_expand': {
 \      'linter_checking': 'lightline#ale#checking',
 \      'linter_infos': 'lightline#ale#infos',
@@ -483,3 +492,8 @@ command! FZFLines call fzf#run({
 \   'down':    '60%'
 \})
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YouCompleteMe
+"
+let g:ycm_rust_src_path = '/usr/local/rust/rust-1.42.0/src'

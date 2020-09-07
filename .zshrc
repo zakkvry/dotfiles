@@ -101,7 +101,13 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
+#
+# make CapsLock behave like Ctrl:
+setxkbmap -option ctrl:nocaps
+#
+# # make short-pressed Ctrl behave like Escape:
+xcape -e 'Control_L=Escape'
+xcape -e 'Alt_L=Alt_L'
 
 #############################################################
 # NVM #######################################################
@@ -109,6 +115,8 @@ source $ZSH/oh-my-zsh.sh
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
 
 #############################################################
 # FZF #######################################################
@@ -139,6 +147,14 @@ vpn () {
   sudo protonvpn -f c
 }
 
+kill_xorg () {
+  {
+    ps -A | grep "Xorg" | cut -d " " -f 2 | sudo xargs kill -9
+  } || {
+    ps -A | grep "Xorg" | cut -d " " -f 1 | sudo xargs kill -9
+  }
+}
+
 
 # prompt_context() {
 #   if [[ "$USER" != "$DEFAULT_USER" || -n "$SSH_CLIENT" ]]; then
@@ -154,5 +170,5 @@ vpn () {
 
 fpath+=$HOME/.zsh/pure
 
-# autoload -U promptinit; promptinit
-# prompt pure
+autoload -U promptinit; promptinit
+prompt pure

@@ -108,7 +108,7 @@ export NVM_DIR="$HOME/.nvm"
 
 #############################################################
 # FZF #######################################################
-export BAT_THEME="gruvbox"
+export BAT_THEME="TwoDark"
 # Use ~~ as the trigger sequence instead of the default **
 export FZF_COMPLETION_TRIGGER='~~'
 
@@ -148,3 +148,7 @@ fpath+=$HOME/.zsh/pure
 
 # autoload -U promptinit; promptinit
 # prompt pure
+#
+#
+
+export TF_VAR_signalfx_auth_token=yD03wRxGTpYg5qtizHBmCg

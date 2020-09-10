@@ -352,3 +352,13 @@ let g:gutentags_ctags_extra_args = ['-R', '--exclude=node_modules', '--exclude=p
 let g:gutentags_ctags_executable = '/snap/bin/ctags'
 
 let g:gutentags_ctags_tagfile = '.tags'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" YCM
+
+" ts autocomplete boxes cause immense lag
+let g:ycm_filetype_specific_completion_to_disable = {
+\ 'typescript': 1,
+\ 'typescriptreact' 1
+\}
+

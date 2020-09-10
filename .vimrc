@@ -583,11 +583,11 @@ command! FZFLines call fzf#run({
 \})
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Codi
+" YCM
 
-let g:codi#interpreters = {
-\ 'javascript': {
-\   'rightalign': 0,
-\   'bin': 'node'
-\ },
-\ }
+" ts autocomplete boxes cause immense lag
+let g:ycm_filetype_specific_completion_to_disable = {
+\ 'typescript': 1,
+\ 'typescriptreact' 1
+\}
+

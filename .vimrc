@@ -589,6 +589,6 @@ command! FZFLines call fzf#run({
 " ts autocomplete boxes cause immense lag
 let g:ycm_filetype_specific_completion_to_disable = {
 \ 'typescript': 1,
-\ 'typescriptreact' 1
+\ 'typescriptreact': 1
 \}
 

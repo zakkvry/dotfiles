@@ -110,6 +110,7 @@ Plug 'rakr/vim-two-firewatch'
 Plug 'morhetz/gruvbox'
 Plug 'joshdick/onedark.vim'
 " Plug 'inkarkat/vim-mark'
+Plug 'kshenoy/vim-signature'
 call plug#end()
 
 autocmd VimEnter * hi! Normal guibg=NONE

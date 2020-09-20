@@ -11,7 +11,7 @@ let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 set foldcolumn=1
-set termguicolors
+" set termguicolors
 syntax enable
 set hidden
 set timeoutlen=1000
@@ -34,6 +34,7 @@ set updatetime=100
 set hlsearch
 set shortmess-=S
 hi MatchParen cterm=none ctermbg=white ctermfg=blue
+
 
 " https://vi.stackexchange.com/questions/56/how-can-i-prevent-vim-from-leaving-too-many-files-like-swap-backup-undo
 autocmd CursorHold,BufWritePost,BufReadPost,BufLeave *
@@ -121,6 +122,7 @@ let g:used_javascript_libs = 'react,underscore,chai'
 
 colorscheme onedark
 color onedark
+hi Normal guibg=NONE ctermbg=NONE
 
 " colorscheme two-firewatch
 " color two-firewatch
@@ -220,6 +222,8 @@ let g:NERDTreeWinSize=75
 " Ale Linting
 "
 
+let g:ycm_rust_src_path = '/usr/local/rust/src'
+
 highlight ALEError ctermbg=none cterm=underline
 highlight ALEEWarning ctermbg=none cterm=underline
 
@@ -240,7 +244,8 @@ let g:ale_fixers = {
 \ 'javascript': ['prettier'],
 \ 'typescript': ['prettier'],
 \ 'typescriptreact': ['prettier'],
-\ 'json': ['prettier']
+\ 'json': ['prettier'],
+\ 'rust': ['rustfmt']
 \}
 
 let g:ale_fix_on_save = 1
@@ -474,12 +479,12 @@ endif
 
 " let g:gitgutter_override_sign_column_highlight = 0
 
-highlight SignColumn ctermbg=0
+highlight SignColumn ctermbg=NONE
 " highlight SignColumn guibg=green:w!
 "
-highlight GitGutterAdd    guifg=#009900 ctermfg=2 ctermbg=0
-highlight GitGutterChange guifg=#bbbb00 ctermfg=3 ctermbg=0
-highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=0
+highlight GitGutterAdd    guifg=#009900 ctermfg=2 ctermbg=NONE
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3 ctermbg=NONE
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=NONE
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fuzzy Finder

@@ -1,3 +1,7 @@
+# remap caps lock to additional control key
+setxkbmap -option caps:ctrl_modifier
+xcape -e 'Control_L=Escape'
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -146,9 +150,8 @@ convert-to-mp3 () {
 
 fpath+=$HOME/.zsh/pure
 
-# autoload -U promptinit; promptinit
-# prompt pure
-#
-#
+autoload -U promptinit; promptinit
+prompt pure
 
-export TF_VAR_signalfx_auth_token=yD03wRxGTpYg5qtizHBmCg
+vpn () {  sudo protonvpn -f c}
+

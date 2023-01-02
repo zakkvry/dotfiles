@@ -1,0 +1,16 @@
+###########################################
+# remap keys tutorial -> http://xahlee.info/linux/linux_set_F2_F3_F4_to_cut_copy_paste.html
+# xvkbd -> https://aur.archlinux.org/packages/xvkbd
+# xbindkeys -> https://aur.archlinux.org/packages/xbindkeys_config-gtk2
+
+"xvkbd -no-jump-pointer -xsendevent -text '\[Left]'"
+Alt+h
+
+"xvkbd -no-jump-pointer -xsendevent -text '\[Down]'"
+Alt+j
+
+"xvkbd -no-jump-pointer -xsendevent -text '\[Up]'"
+Alt+k
+
+"xvkbd -no-jump-pointer -xsendevent -text '\[Right]'"
+Alt+l

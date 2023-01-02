@@ -1,9 +1,19 @@
-# remap caps lock to additional control key
+
+# Set caps to ctrl
 setxkbmap -option caps:ctrl_modifier
-xcape -e 'Control_L=Escape'
+
+# Set ctrl to escape when tapped, ctrl when held
+# XXX fix xcape on arch
+# xcape -e 'Control_L=Escape'
+
+# map Alt+hjkl to arrows
+xbindkeys -f ~/.xbindkeysrc
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/home/z/.local/share/solana/install/active_release/bin:$PATH"
+export PATH="/home/z/.deno/bin:$PATH"
+export TERM=screen-256color-bce
 
 # Path to your oh-my-zsh installation.
 export ZSH=~/.oh-my-zsh
@@ -12,7 +22,7 @@ export ZSH=~/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME=""
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -148,10 +158,8 @@ convert-to-mp3 () {
 #  }
 #}
 
-fpath+=$HOME/.zsh/pure
+fpath+=($HOME/.zsh/pure)
 
 autoload -U promptinit; promptinit
 prompt pure
-
-vpn () {  sudo protonvpn -f c}
 

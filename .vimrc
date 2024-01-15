@@ -71,6 +71,10 @@ if !exists("g:vscode")
 	endif
 
 	call plug#begin('~/.vim/plugged')
+	Plug 'neovim/nvim-lspconfig'
+	Plug 'SmiteshP/nvim-navic'
+	Plug 'MunifTanjim/nui.nvim'
+	Plug 'SmiteshP/nvim-navbuddy'
 	Plug 'google/vim-searchindex'
 	Plug 'ryanoasis/vim-devicons'
 	Plug 'Raimondi/delimitMate'
@@ -85,7 +89,6 @@ if !exists("g:vscode")
 	" Plug 'MaxMEllon/vim-jsx-pretty'
 	Plug 'tpope/vim-surround'
 	Plug 'https://github.com/airblade/vim-gitgutter.git'
-	Plug 'dense-analysis/ale'
 	Plug 'preservim/nerdtree'
 	" Plug 'Valloric/YouCompleteMe'
 	Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -116,6 +119,8 @@ if !exists("g:vscode")
 	" Plug 'inkarkat/vim-mark'
 	Plug 'kshenoy/vim-signature'
 	call plug#end()
+
+	source ~/Github/dotfiles/init.lua.vim
 
 	autocmd VimEnter * hi! Normal guibg=NONE
 	let g:buftabline_indicators = 1
@@ -150,9 +155,11 @@ if !exists("g:vscode")
 	" NERDTree
 	"
 	" NERDTrees File highlighting
+	"
+	"
 	function! NERDTreeHighlightFile(extension, fg, bg, guifg)
 	  exec 'autocmd FileType nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guifg='. a:guifg
-	  exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
+	  " exec 'autocmd FileType nerdtree syn match ' . a:extension .' #^\s\+.*'. a:extension .'$#'
 	endfunction
 
 	call NERDTreeHighlightFile('md', 'white', 'none', '#3366FF')
@@ -220,45 +227,6 @@ if !exists("g:vscode")
 	"     \ "Unknown"   : "?"
 	"     \ }
 
-
-	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-	" Ale Linting
-	"
-
-	let g:ycm_rust_src_path = '/usr/local/rust/src'
-
-	highlight ALEError ctermbg=none cterm=underline
-	highlight ALEEWarning ctermbg=none cterm=underline
-
-	let g:ale_statusline_format = ['x %d', '! %d', 'ok']
-	" let g:ale_sign_error = 'x'
-	" let g:ale_sign_warning = '!'
-
-	set signcolumn=yes              " always show the signcolumn on LH side
-	let g:ale_set_highlights = 0    " don't highlight first char of errors
-
-	let g:ale_linters = {
-	\ 'javascript': ['eslint'],
-	\ 'typescript': ['eslint']
-	\}
-
-	let g:ale_fixers = {
-	\ 'css': ['prettier'],
-	\ 'javascript': ['prettier'],
-	\ 'typescript': ['prettier'],
-	\ 'typescriptreact': ['prettier'],
-	\ 'json': ['prettier'],
-	\ 'rust': ['rustfmt']
-	\}
-
-	let g:ale_fix_on_save = 1
-
-	nnoremap [a :ALEPrevious<CR>
-	nnoremap ]a :ALENext<CR>
-
-	nnoremap <Leader>p :ALEFix<CR>
-
-	""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 	" Movement
 
 	" Always move linewise in normal mode
@@ -614,8 +582,6 @@ if !exists("g:vscode")
 	  vnoremap <silent><nowait><expr> <C-Right> coc#float#has_scroll() ? coc#float#scroll(1) : "\<C-Right>"
 	  vnoremap <silent><nowait><expr> <C-Left> coc#float#has_scroll() ? coc#float#scroll(0) : "\<C-Left>"
 
-	  " invoke  float at cursor
-	  nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>
 	endif
 
 	else

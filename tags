@@ -1,0 +1,509 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_EXCMD	mixed	/number, pattern, mixed, or combineV2/
+!_TAG_OUTPUT_FILESEP	slash	/slash or backslash/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PATTERN_LENGTH_LIMIT	96	/0 for no limit/
+!_TAG_PROC_CWD	/run/media/z/Files/Github/dotfiles/	//
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	5.9.0	/p5.9.20220828.0/
+$FZF_DEFAULT_COMMAND	.vimrc	/^	  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git\/*"'$/;"	v
+*	.vimrc	/^	nnoremap * *N$/;"	m
+0	iterm/iterm-profile.json	/^    "rlogin",$/;"	s	array:Jobs to Ignore
+0x2d-0x40000	iterm/iterm-profile.json	/^    "0x2d-0x40000" : {$/;"	o	object:Keyboard Map
+0x32-0x40000	iterm/iterm-profile.json	/^    "0x32-0x40000" : {$/;"	o	object:Keyboard Map
+0x33-0x40000	iterm/iterm-profile.json	/^    "0x33-0x40000" : {$/;"	o	object:Keyboard Map
+0x34-0x40000	iterm/iterm-profile.json	/^    "0x34-0x40000" : {$/;"	o	object:Keyboard Map
+0x35-0x40000	iterm/iterm-profile.json	/^    "0x35-0x40000" : {$/;"	o	object:Keyboard Map
+0x36-0x40000	iterm/iterm-profile.json	/^    "0x36-0x40000" : {$/;"	o	object:Keyboard Map
+0x37-0x40000	iterm/iterm-profile.json	/^    "0x37-0x40000" : {$/;"	o	object:Keyboard Map
+0x38-0x40000	iterm/iterm-profile.json	/^    "0x38-0x40000" : {$/;"	o	object:Keyboard Map
+0xf700-0x220000	iterm/iterm-profile.json	/^    "0xf700-0x220000" : {$/;"	o	object:Keyboard Map
+0xf700-0x240000	iterm/iterm-profile.json	/^    "0xf700-0x240000" : {$/;"	o	object:Keyboard Map
+0xf700-0x260000	iterm/iterm-profile.json	/^    "0xf700-0x260000" : {$/;"	o	object:Keyboard Map
+0xf700-0x280000	iterm/iterm-profile.json	/^    "0xf700-0x280000" : {$/;"	o	object:Keyboard Map
+0xf701-0x220000	iterm/iterm-profile.json	/^    "0xf701-0x220000" : {$/;"	o	object:Keyboard Map
+0xf701-0x240000	iterm/iterm-profile.json	/^    "0xf701-0x240000" : {$/;"	o	object:Keyboard Map
+0xf701-0x260000	iterm/iterm-profile.json	/^    "0xf701-0x260000" : {$/;"	o	object:Keyboard Map
+0xf701-0x280000	iterm/iterm-profile.json	/^    "0xf701-0x280000" : {$/;"	o	object:Keyboard Map
+0xf702-0x220000	iterm/iterm-profile.json	/^    "0xf702-0x220000" : {$/;"	o	object:Keyboard Map
+0xf702-0x240000	iterm/iterm-profile.json	/^    "0xf702-0x240000" : {$/;"	o	object:Keyboard Map
+0xf702-0x260000	iterm/iterm-profile.json	/^    "0xf702-0x260000" : {$/;"	o	object:Keyboard Map
+0xf702-0x280000	iterm/iterm-profile.json	/^    "0xf702-0x280000" : {$/;"	o	object:Keyboard Map
+0xf703-0x220000	iterm/iterm-profile.json	/^    "0xf703-0x220000" : {$/;"	o	object:Keyboard Map
+0xf703-0x240000	iterm/iterm-profile.json	/^    "0xf703-0x240000" : {$/;"	o	object:Keyboard Map
+0xf703-0x260000	iterm/iterm-profile.json	/^    "0xf703-0x260000" : {$/;"	o	object:Keyboard Map
+0xf703-0x280000	iterm/iterm-profile.json	/^    "0xf703-0x280000" : {$/;"	o	object:Keyboard Map
+0xf704-0x20000	iterm/iterm-profile.json	/^    "0xf704-0x20000" : {$/;"	o	object:Keyboard Map
+0xf705-0x20000	iterm/iterm-profile.json	/^    "0xf705-0x20000" : {$/;"	o	object:Keyboard Map
+0xf706-0x20000	iterm/iterm-profile.json	/^    "0xf706-0x20000" : {$/;"	o	object:Keyboard Map
+0xf707-0x20000	iterm/iterm-profile.json	/^    "0xf707-0x20000" : {$/;"	o	object:Keyboard Map
+0xf708-0x20000	iterm/iterm-profile.json	/^    "0xf708-0x20000" : {$/;"	o	object:Keyboard Map
+0xf709-0x20000	iterm/iterm-profile.json	/^    "0xf709-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70a-0x20000	iterm/iterm-profile.json	/^    "0xf70a-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70b-0x20000	iterm/iterm-profile.json	/^    "0xf70b-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70c-0x20000	iterm/iterm-profile.json	/^    "0xf70c-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70d-0x20000	iterm/iterm-profile.json	/^    "0xf70d-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70e-0x20000	iterm/iterm-profile.json	/^    "0xf70e-0x20000" : {$/;"	o	object:Keyboard Map
+0xf70f-0x20000	iterm/iterm-profile.json	/^    "0xf70f-0x20000" : {$/;"	o	object:Keyboard Map
+0xf729-0x20000	iterm/iterm-profile.json	/^    "0xf729-0x20000" : {$/;"	o	object:Keyboard Map
+0xf729-0x40000	iterm/iterm-profile.json	/^    "0xf729-0x40000" : {$/;"	o	object:Keyboard Map
+0xf72b-0x20000	iterm/iterm-profile.json	/^    "0xf72b-0x20000" : {$/;"	o	object:Keyboard Map
+0xf72b-0x40000	iterm/iterm-profile.json	/^    "0xf72b-0x40000" : {$/;"	o	object:Keyboard Map
+1	iterm/iterm-profile.json	/^    "ssh",$/;"	s	array:Jobs to Ignore
+2	iterm/iterm-profile.json	/^    "slogin",$/;"	s	array:Jobs to Ignore
+3	iterm/iterm-profile.json	/^    "telnet"$/;"	s	array:Jobs to Ignore
+<A-Left>	.vimrc	/^	noremap <A-Left>  :tabmove -1<CR>$/;"	m
+<A-Right>	.vimrc	/^	noremap <A-Right> :tabmove +3<CR>$/;"	m
+<C-B>	.vimrc	/^	nnoremap <C-B> :call MyNerdToggle()<CR>$/;"	m
+<C-Left>	.vimrc	/^	  inoremap <silent><nowait><expr> <C-Left> coc#float#has_scroll() ? "\\<c-r>=coc#float#scroll(0/;"	m
+<C-Left>	.vimrc	/^	  nnoremap <silent><nowait><expr> <C-Left> coc#float#has_scroll() ? coc#float#scroll(0) : "\\<C/;"	m
+<C-Left>	.vimrc	/^	  vnoremap <silent><nowait><expr> <C-Left> coc#float#has_scroll() ? coc#float#scroll(0) : "\\<C/;"	m
+<C-N>	.vimrc	/^	nnoremap <C-N> :bnext<CR>$/;"	m
+<C-P>	.vimrc	/^	nnoremap <C-P> :bprev<CR>$/;"	m
+<C-Return>	.vimrc	/^	imap <C-Return> <CR><CR><C-o>k<Tab>$/;"	m
+<C-Right>	.vimrc	/^	  inoremap <silent><nowait><expr> <C-Right> coc#float#has_scroll() ? "\\<c-r>=coc#float#scroll(/;"	m
+<C-Right>	.vimrc	/^	  nnoremap <silent><nowait><expr> <C-Right> coc#float#has_scroll() ? coc#float#scroll(1) : "\\</;"	m
+<C-Right>	.vimrc	/^	  vnoremap <silent><nowait><expr> <C-Right> coc#float#has_scroll() ? coc#float#scroll(1) : "\\</;"	m
+<C-j>	.vimrc	/^	nnoremap <C-j> :m .+1<Return>==$/;"	m
+<C-j>	.vimrc	/^	vnoremap <C-j> :m '>+1<Return>gv=gv$/;"	m
+<C-k>	.vimrc	/^	nnoremap <C-k> :m .-2<Return>==$/;"	m
+<C-k>	.vimrc	/^	vnoremap <C-k> :m '<-2<Return>gv=gv$/;"	m
+<Leader><space>	.vimrc	/^	nnoremap <Leader><space> :noh<CR>$/;"	m
+<Leader>B	.vimrc	/^	nnoremap <Leader>B :w <bar> %bd <bar> e# <bar> Buffers<CR> $/;"	m
+<Leader>F	.vimrc	/^	nnoremap <Leader>F :RgStrict<CR>$/;"	m
+<Leader>H	.vimrc	/^	map <Leader>H :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'$/;"	m
+<Leader>S	.vimrc	/^	nnoremap <Leader>S :mksession! .\/.vim\/session.vim<CR>$/;"	m
+<Leader>T	.vimrc	/^	nnoremap <Leader>T :Tags<CR>$/;"	m
+<Leader>b	.vimrc	/^	nnoremap <Leader>b :call fzf#vim#buffers({'top': '25%'})<CR>$/;"	m
+<Leader>f	.vimrc	/^	nnoremap <Leader>f :Rg<CR>$/;"	m
+<Leader>g	.vimrc	/^	nnoremap <Leader>g :G<CR>$/;"	m
+<Leader>n	.vimrc	/^	noremap <Leader>n :set number!<Return>$/;"	m
+<Leader>p	.vimrc	/^	nnoremap <Leader>p :ALEFix<CR>$/;"	m
+<Leader>p	.vimrc	/^	nnoremap <Leader>p :call Fzf_dev()<CR>$/;"	m
+<Leader>s	.vimrc	/^	nnoremap <Leader>s :FZFLines<CR>$/;"	m
+<Leader>t	.vimrc	/^	nnoremap <Leader>t :BTags<CR>$/;"	m
+<S-Tab>	.vimrc	/^		inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\\<S-Tab>"$/;"	m
+<Tab>	.vimrc	/^		inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\\<Tab>"$/;"	m
+<leader>cF	.vimrc	/^	  nnoremap <leader>cF :let @*=expand("%:p")<CR>$/;"	m
+<leader>cd	.vimrc	/^	nnoremap <leader>cd :cd %:p:h<CR>:pwd<CR>$/;"	m
+<leader>cf	.vimrc	/^	  nnoremap <leader>cf :let @*=expand("%")<CR>$/;"	m
+<leader>ch	.vimrc	/^	  nnoremap <leader>ch :let @*=expand("%:p:h")<CR>$/;"	m
+<leader>ct	.vimrc	/^	  nnoremap <leader>ct :let @*=expand("%:t")<CR>$/;"	m
+<leader>h	.vimrc	/^	  nnoremap <silent> <leader>h :call CocActionAsync('doHover')<cr>$/;"	m
+<leader>wt	.vimrc	/^	nnoremap <silent> <leader>wt :call ToggleWindowHorizontalVerticalSplit()<cr>$/;"	m
+ASCII Anti Aliased	iterm/iterm-profile.json	/^  "ASCII Anti Aliased" : true,$/;"	b
+ASCII Ligatures	iterm/iterm-profile.json	/^  "ASCII Ligatures" : true,$/;"	b
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf700-0x220000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf700-0x240000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf700-0x260000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf701-0x220000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf701-0x240000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf701-0x260000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf702-0x220000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf702-0x240000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf702-0x260000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf703-0x220000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf703-0x240000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf703-0x260000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf704-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf705-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf706-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf707-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf708-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf709-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70a-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70b-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70c-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70d-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70e-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf70f-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf729-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf729-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf72b-0x20000
+Action	iterm/iterm-profile.json	/^      "Action" : 10,$/;"	n	object:Keyboard Map.0xf72b-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x2d-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x32-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x33-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x34-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x35-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x36-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x37-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0x38-0x40000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0xf700-0x280000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0xf701-0x280000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0xf702-0x280000
+Action	iterm/iterm-profile.json	/^      "Action" : 11,$/;"	n	object:Keyboard Map.0xf703-0x280000
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 0.7057952880859375,$/;"	n	object:Badge Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 0 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 1 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 10 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 11 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 12 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 13 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 14 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 15 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 2 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 3 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 4 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 5 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 6 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 7 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 8 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Ansi 9 Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Background Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Bold Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Cursor Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Cursor Guide Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Cursor Text Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Foreground Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Link Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Selected Text Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Selection Color
+Alpha Component	iterm/iterm-profile.json	/^    "Alpha Component" : 1,$/;"	n	object:Tab Color
+Ambiguous Double Width	iterm/iterm-profile.json	/^  "Ambiguous Double Width" : false,$/;"	b
+Ansi 0 Color	iterm/iterm-profile.json	/^  "Ansi 0 Color" : {$/;"	o
+Ansi 1 Color	iterm/iterm-profile.json	/^  "Ansi 1 Color" : {$/;"	o
+Ansi 10 Color	iterm/iterm-profile.json	/^  "Ansi 10 Color" : {$/;"	o
+Ansi 11 Color	iterm/iterm-profile.json	/^  "Ansi 11 Color" : {$/;"	o
+Ansi 12 Color	iterm/iterm-profile.json	/^  "Ansi 12 Color" : {$/;"	o
+Ansi 13 Color	iterm/iterm-profile.json	/^  "Ansi 13 Color" : {$/;"	o
+Ansi 14 Color	iterm/iterm-profile.json	/^  "Ansi 14 Color" : {$/;"	o
+Ansi 15 Color	iterm/iterm-profile.json	/^  "Ansi 15 Color" : {$/;"	o
+Ansi 2 Color	iterm/iterm-profile.json	/^  "Ansi 2 Color" : {$/;"	o
+Ansi 3 Color	iterm/iterm-profile.json	/^  "Ansi 3 Color" : {$/;"	o
+Ansi 4 Color	iterm/iterm-profile.json	/^  "Ansi 4 Color" : {$/;"	o
+Ansi 5 Color	iterm/iterm-profile.json	/^  "Ansi 5 Color" : {$/;"	o
+Ansi 6 Color	iterm/iterm-profile.json	/^  "Ansi 6 Color" : {$/;"	o
+Ansi 7 Color	iterm/iterm-profile.json	/^  "Ansi 7 Color" : {$/;"	o
+Ansi 8 Color	iterm/iterm-profile.json	/^  "Ansi 8 Color" : {$/;"	o
+Ansi 9 Color	iterm/iterm-profile.json	/^  "Ansi 9 Color" : {$/;"	o
+BM Growl	iterm/iterm-profile.json	/^  "BM Growl" : true,$/;"	b
+Background Color	iterm/iterm-profile.json	/^  "Background Color" : {$/;"	o
+Background Image Location	iterm/iterm-profile.json	/^  "Background Image Location" : "",$/;"	s
+Badge Color	iterm/iterm-profile.json	/^  "Badge Color" : {$/;"	o
+Blink Allowed	iterm/iterm-profile.json	/^  "Blink Allowed" : true,$/;"	b
+Blinking Cursor	iterm/iterm-profile.json	/^  "Blinking Cursor" : true,$/;"	b
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.19183900952339172,$/;"	n	object:Background Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.25300124287605286,$/;"	n	object:Ansi 0 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.25300124287605286,$/;"	n	object:Cursor Guide Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.25300124287605286,$/;"	n	object:Cursor Text Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.25300124287605286,$/;"	n	object:Tab Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.29600727558135986,$/;"	n	object:Badge Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.34064260125160217,$/;"	n	object:Ansi 8 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.34064260125160217,$/;"	n	object:Selection Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.34168937802314758,$/;"	n	object:Ansi 1 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.34168937802314758,$/;"	n	object:Ansi 9 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.47280269861221313,$/;"	n	object:Ansi 11 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.47280269861221313,$/;"	n	object:Ansi 3 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.47597441077232361,$/;"	n	object:Ansi 10 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.47597441077232361,$/;"	n	object:Ansi 2 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.61571133136749268,$/;"	n	object:Ansi 13 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.61571133136749268,$/;"	n	object:Ansi 5 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.67779052257537842,$/;"	n	object:Ansi 14 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.70459425449371338,$/;"	n	object:Ansi 12 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.70459425449371338,$/;"	n	object:Ansi 4 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.77356863021850586,$/;"	n	object:Ansi 6 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.89225912094116211,$/;"	n	object:Foreground Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.89225924015045166,$/;"	n	object:Cursor Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.89225924015045166,$/;"	n	object:Selected Text Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.92620980739593506,$/;"	n	object:Ansi 7 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.92620980739593506,$/;"	n	object:Link Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.94574689865112305,$/;"	n	object:Ansi 15 Color
+Blue Component	iterm/iterm-profile.json	/^    "Blue Component" : 0.94574689865112305,$/;"	n	object:Bold Color
+Blur	iterm/iterm-profile.json	/^  "Blur" : false,$/;"	b
+Blur Radius	iterm/iterm-profile.json	/^  "Blur Radius" : 2.6705444955583757,$/;"	n
+Bold Color	iterm/iterm-profile.json	/^  "Bold Color" : {$/;"	o
+Character Encoding	iterm/iterm-profile.json	/^  "Character Encoding" : 4,$/;"	n
+Close Sessions On End	iterm/iterm-profile.json	/^  "Close Sessions On End" : true,$/;"	b
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 0 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 1 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 10 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 11 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 12 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 13 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 14 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 15 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 2 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 3 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 4 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 5 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 6 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 7 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 8 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Ansi 9 Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Background Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Badge Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Bold Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Cursor Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Cursor Guide Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Cursor Text Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Foreground Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Link Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Selected Text Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Selection Color
+Color Space	iterm/iterm-profile.json	/^    "Color Space" : "Calibrated",$/;"	s	object:Tab Color
+Columns	iterm/iterm-profile.json	/^  "Columns" : 200,$/;"	n
+Command	iterm/iterm-profile.json	/^  "Command" : "",$/;"	s
+Cursor Boost	iterm/iterm-profile.json	/^  "Cursor Boost" : 0,$/;"	n
+Cursor Color	iterm/iterm-profile.json	/^  "Cursor Color" : {$/;"	o
+Cursor Guide Color	iterm/iterm-profile.json	/^  "Cursor Guide Color" : {$/;"	o
+Cursor Text Color	iterm/iterm-profile.json	/^  "Cursor Text Color" : {$/;"	o
+Cursor Type	iterm/iterm-profile.json	/^  "Cursor Type" : 2,$/;"	n
+Custom Command	iterm/iterm-profile.json	/^  "Custom Command" : "No",$/;"	s
+Custom Directory	iterm/iterm-profile.json	/^  "Custom Directory" : "No",$/;"	s
+Custom Window Title	iterm/iterm-profile.json	/^  "Custom Window Title" : "",$/;"	s
+Default Bookmark	iterm/iterm-profile.json	/^  "Default Bookmark" : "No",$/;"	s
+Description	iterm/iterm-profile.json	/^  "Description" : "Default",$/;"	s
+Disable Window Resizing	iterm/iterm-profile.json	/^  "Disable Window Resizing" : true,$/;"	b
+Draw Powerline Glyphs	iterm/iterm-profile.json	/^  "Draw Powerline Glyphs" : true,$/;"	b
+FZFLines	.vimrc	/^	command! FZFLines call fzf#run({$/;"	c
+Find	.vimrc	/^	  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixe/;"	c
+Flashing Bell	iterm/iterm-profile.json	/^  "Flashing Bell" : false,$/;"	b
+Foreground Color	iterm/iterm-profile.json	/^  "Foreground Color" : {$/;"	o
+Fzf_dev	.vimrc	/^	function! Fzf_dev()$/;"	f
+GitBranchWithIcon	.vimrc	/^	function! GitBranchWithIcon()$/;"	f
+GitStatus	.vimrc	/^	function! GitStatus()$/;"	f
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.15255947411060333$/;"	n	object:Background Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.19692185521125793$/;"	n	object:Ansi 0 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.19692185521125793$/;"	n	object:Cursor Guide Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.19692185521125793$/;"	n	object:Cursor Text Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.19692185521125793$/;"	n	object:Tab Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.23046499490737915$/;"	n	object:Badge Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.2652154266834259$/;"	n	object:Ansi 8 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.2652154266834259$/;"	n	object:Selection Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.29435792565345764$/;"	n	object:Ansi 1 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.29435792565345764$/;"	n	object:Ansi 9 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.47487166523933411$/;"	n	object:Ansi 13 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.47487166523933411$/;"	n	object:Ansi 5 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.56080448627471924$/;"	n	object:Ansi 12 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.56080448627471924$/;"	n	object:Ansi 4 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.68614721298217773$/;"	n	object:Ansi 14 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.7002110481262207$/;"	n	object:Ansi 10 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.7002110481262207$/;"	n	object:Ansi 2 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.70216643810272217$/;"	n	object:Ansi 6 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.75577855110168457$/;"	n	object:Ansi 11 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.75577855110168457$/;"	n	object:Ansi 3 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.83857882022857666$/;"	n	object:Cursor Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.83857882022857666$/;"	n	object:Foreground Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.83857882022857666$/;"	n	object:Selected Text Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.8916594386100769$/;"	n	object:Ansi 7 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.8916594386100769$/;"	n	object:Link Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.92092084884643555$/;"	n	object:Ansi 15 Color
+Green Component	iterm/iterm-profile.json	/^    "Green Component" : 0.92092084884643555$/;"	n	object:Bold Color
+Guid	iterm/iterm-profile.json	/^  "Guid" : "18766C15-7B1C-4A7D-A87D-0639709E7FC3",$/;"	s
+Horizontal Spacing	iterm/iterm-profile.json	/^  "Horizontal Spacing" : 1,$/;"	n
+Idle Code	iterm/iterm-profile.json	/^  "Idle Code" : 0,$/;"	n
+Jobs to Ignore	iterm/iterm-profile.json	/^  "Jobs to Ignore" : [$/;"	a
+Keyboard Map	iterm/iterm-profile.json	/^  "Keyboard Map" : {$/;"	o
+Link Color	iterm/iterm-profile.json	/^  "Link Color" : {$/;"	o
+Minimum Contrast	iterm/iterm-profile.json	/^  "Minimum Contrast" : 0,$/;"	n
+Mouse Reporting	iterm/iterm-profile.json	/^  "Mouse Reporting" : true,$/;"	b
+MyNerdToggle	.vimrc	/^	function MyNerdToggle()$/;"	f
+NERDTreeDirArrows	.vimrc	/^	let NERDTreeDirArrows = 1$/;"	v
+NERDTreeHighlightFile	.vimrc	/^	function! NERDTreeHighlightFile(extension, fg, bg, guifg)$/;"	f
+NERDTreeMinimalUI	.vimrc	/^	let NERDTreeMinimalUI = 1$/;"	v
+Name	iterm/iterm-profile.json	/^  "Name" : "Default",$/;"	s
+Non Ascii Font	iterm/iterm-profile.json	/^  "Non Ascii Font" : "FiraCode-Regular 12",$/;"	s
+Non-ASCII Anti Aliased	iterm/iterm-profile.json	/^  "Non-ASCII Anti Aliased" : true,$/;"	b
+Non-ASCII Ligatures	iterm/iterm-profile.json	/^  "Non-ASCII Ligatures" : true,$/;"	b
+Normal Font	iterm/iterm-profile.json	/^  "Normal Font" : "DankMonoNerdFontComplete-Regular 16",$/;"	s
+Only The Default BG Color Uses Transparency	iterm/iterm-profile.json	/^  "Only The Default BG Color Uses Transparency" : false,$/;"	b
+Option Key Sends	iterm/iterm-profile.json	/^  "Option Key Sends" : 0,$/;"	n
+Prompt Before Closing 2	iterm/iterm-profile.json	/^  "Prompt Before Closing 2" : false,$/;"	b
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.1357133686542511,$/;"	n	object:Background Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.17621420323848724,$/;"	n	object:Ansi 0 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.17621420323848724,$/;"	n	object:Cursor Guide Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.17621420323848724,$/;"	n	object:Cursor Text Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.17621420323848724,$/;"	n	object:Tab Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.20252507925033569,$/;"	n	object:Badge Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.23306176066398621,$/;"	n	object:Ansi 8 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.23306176066398621,$/;"	n	object:Selection Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.43401443958282471,$/;"	n	object:Ansi 12 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.43401443958282471,$/;"	n	object:Ansi 4 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.4660642147064209,$/;"	n	object:Ansi 6 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.49344515800476074,$/;"	n	object:Ansi 14 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.57605421543121338,$/;"	n	object:Ansi 10 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.57605421543121338,$/;"	n	object:Ansi 2 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.64283657073974609,$/;"	n	object:Ansi 13 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.64283657073974609,$/;"	n	object:Ansi 5 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.68855589628219604,$/;"	n	object:Ansi 1 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.68855589628219604,$/;"	n	object:Ansi 9 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.81214714050292969,$/;"	n	object:Cursor Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.81214714050292969,$/;"	n	object:Selected Text Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.81214725971221924,$/;"	n	object:Foreground Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.87367779016494751,$/;"	n	object:Ansi 7 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.87367779016494751,$/;"	n	object:Link Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.89902019500732422,$/;"	n	object:Ansi 11 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.89902019500732422,$/;"	n	object:Ansi 3 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.90727746486663818,$/;"	n	object:Ansi 15 Color
+Red Component	iterm/iterm-profile.json	/^    "Red Component" : 0.90727746486663818,$/;"	n	object:Bold Color
+RelPathname	.vimrc	/^	function! RelPathname()$/;"	f
+Rg	.vimrc	/^	command! -bang -nargs=* Rg$/;"	c
+RgStrict	.vimrc	/^	command! -bang -nargs=* RgStrict$/;"	c
+Right Option Key Sends	iterm/iterm-profile.json	/^  "Right Option Key Sends" : 0,$/;"	n
+Rows	iterm/iterm-profile.json	/^  "Rows" : 50,$/;"	n
+Screen	iterm/iterm-profile.json	/^  "Screen" : -1,$/;"	n
+Scrollback Lines	iterm/iterm-profile.json	/^  "Scrollback Lines" : 1000,$/;"	n
+Selected Text Color	iterm/iterm-profile.json	/^  "Selected Text Color" : {$/;"	o
+Selection Color	iterm/iterm-profile.json	/^  "Selection Color" : {$/;"	o
+Send Code When Idle	iterm/iterm-profile.json	/^  "Send Code When Idle" : false,$/;"	b
+Shortcut	iterm/iterm-profile.json	/^  "Shortcut" : "T",$/;"	s
+Silence Bell	iterm/iterm-profile.json	/^  "Silence Bell" : false,$/;"	b
+Sync Title	iterm/iterm-profile.json	/^  "Sync Title" : false,$/;"	b
+Tab Color	iterm/iterm-profile.json	/^  "Tab Color" : {$/;"	o
+Tags	iterm/iterm-profile.json	/^  "Tags" : [$/;"	a
+Terminal Type	iterm/iterm-profile.json	/^  "Terminal Type" : "xterm-256color",$/;"	s
+Text	iterm/iterm-profile.json	/^      "Text" : "0x00"$/;"	s	object:Keyboard Map.0x32-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1b 0x1b 0x5b 0x41"$/;"	s	object:Keyboard Map.0xf700-0x280000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1b 0x1b 0x5b 0x42"$/;"	s	object:Keyboard Map.0xf701-0x280000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1b 0x1b 0x5b 0x43"$/;"	s	object:Keyboard Map.0xf703-0x280000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1b 0x1b 0x5b 0x44"$/;"	s	object:Keyboard Map.0xf702-0x280000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1b"$/;"	s	object:Keyboard Map.0x33-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1c"$/;"	s	object:Keyboard Map.0x34-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1d"$/;"	s	object:Keyboard Map.0x35-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1e"$/;"	s	object:Keyboard Map.0x36-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1f"$/;"	s	object:Keyboard Map.0x2d-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x1f"$/;"	s	object:Keyboard Map.0x37-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "0x7f"$/;"	s	object:Keyboard Map.0x38-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "[15;2~"$/;"	s	object:Keyboard Map.0xf708-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[17;2~"$/;"	s	object:Keyboard Map.0xf709-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[18;2~"$/;"	s	object:Keyboard Map.0xf70a-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[19;2~"$/;"	s	object:Keyboard Map.0xf70b-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2A"$/;"	s	object:Keyboard Map.0xf700-0x220000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2B"$/;"	s	object:Keyboard Map.0xf701-0x220000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2C"$/;"	s	object:Keyboard Map.0xf703-0x220000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2D"$/;"	s	object:Keyboard Map.0xf702-0x220000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2F"$/;"	s	object:Keyboard Map.0xf72b-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2H"$/;"	s	object:Keyboard Map.0xf729-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2P"$/;"	s	object:Keyboard Map.0xf704-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2Q"$/;"	s	object:Keyboard Map.0xf705-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2R"$/;"	s	object:Keyboard Map.0xf706-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;2S"$/;"	s	object:Keyboard Map.0xf707-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5A"$/;"	s	object:Keyboard Map.0xf700-0x240000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5B"$/;"	s	object:Keyboard Map.0xf701-0x240000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5C"$/;"	s	object:Keyboard Map.0xf703-0x240000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5D"$/;"	s	object:Keyboard Map.0xf702-0x240000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5F"$/;"	s	object:Keyboard Map.0xf72b-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;5H"$/;"	s	object:Keyboard Map.0xf729-0x40000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;6A"$/;"	s	object:Keyboard Map.0xf700-0x260000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;6B"$/;"	s	object:Keyboard Map.0xf701-0x260000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;6C"$/;"	s	object:Keyboard Map.0xf703-0x260000
+Text	iterm/iterm-profile.json	/^      "Text" : "[1;6D"$/;"	s	object:Keyboard Map.0xf702-0x260000
+Text	iterm/iterm-profile.json	/^      "Text" : "[20;2~"$/;"	s	object:Keyboard Map.0xf70c-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[21;2~"$/;"	s	object:Keyboard Map.0xf70d-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[23;2~"$/;"	s	object:Keyboard Map.0xf70e-0x20000
+Text	iterm/iterm-profile.json	/^      "Text" : "[24;2~"$/;"	s	object:Keyboard Map.0xf70f-0x20000
+Thin Strokes	iterm/iterm-profile.json	/^  "Thin Strokes" : 4,$/;"	n
+ToggleWindowHorizontalVerticalSplit	.vimrc	/^	function! ToggleWindowHorizontalVerticalSplit()$/;"	f
+Transparency	iterm/iterm-profile.json	/^  "Transparency" : 0.3281666402284264,$/;"	n
+Unicode Normalization	iterm/iterm-profile.json	/^  "Unicode Normalization" : 0,$/;"	n
+Unicode Version	iterm/iterm-profile.json	/^  "Unicode Version" : 9,$/;"	n
+Unlimited Scrollback	iterm/iterm-profile.json	/^  "Unlimited Scrollback" : false,$/;"	b
+Use Bold Font	iterm/iterm-profile.json	/^  "Use Bold Font" : true,$/;"	b
+Use Bright Bold	iterm/iterm-profile.json	/^  "Use Bright Bold" : true,$/;"	b
+Use Custom Window Title	iterm/iterm-profile.json	/^  "Use Custom Window Title" : false,$/;"	b
+Use Italic Font	iterm/iterm-profile.json	/^  "Use Italic Font" : true,$/;"	b
+Use Non-ASCII Font	iterm/iterm-profile.json	/^  "Use Non-ASCII Font" : false,$/;"	b
+Vertical Spacing	iterm/iterm-profile.json	/^  "Vertical Spacing" : 1,$/;"	n
+Visual Bell	iterm/iterm-profile.json	/^  "Visual Bell" : true,$/;"	b
+Window Type	iterm/iterm-profile.json	/^  "Window Type" : 0,$/;"	n
+Working Directory	iterm/iterm-profile.json	/^  "Working Directory" : "\\\/Users\\\/zverrilli",$/;"	s
+[a	.vimrc	/^	nnoremap [a :ALEPrevious<CR>$/;"	m
+]a	.vimrc	/^	nnoremap ]a :ALENext<CR>$/;"	m
+ayu_dark	alacritty.yml	/^  ayu_dark: &ayu_dark$/;"	a
+ayu_mirage	alacritty.yml	/^  ayu_mirage: &ayu_mirage$/;"	a
+bg	.tmux.conf	/^set -g "window-active-style" "bg=default"$/;"	k
+bg	.tmux.conf	/^set -g "window-style" "bg=default"$/;"	k
+bg	.tmux.conf	/^set-option -g status-right "#{prefix_highlight} #[fg=colour239, bg=colour237, nobold, noundersco/;"	k
+edge_dark_aura	alacritty.yml	/^  edge_dark_aura:  &edge_dark_aura$/;"	a
+edge_dark_default	alacritty.yml	/^  edge_dark_def:  &edge_dark_default$/;"	a
+edge_dark_neon	alacritty.yml	/^  edge_dark_neon:  &edge_dark_neon$/;"	a
+edge_light	alacritty.yml	/^  edge_light:	  &edge_light$/;"	a
+g:NERDTreeWinSize	.vimrc	/^	let g:NERDTreeWinSize=30$/;"	v
+g:ale_fix_on_save	.vimrc	/^	let g:ale_fix_on_save = 1$/;"	v
+g:ale_fixers	.vimrc	/^	let g:ale_fixers = {$/;"	v
+g:ale_linters	.vimrc	/^	let g:ale_linters = {$/;"	v
+g:ale_set_highlights	.vimrc	/^	let g:ale_set_highlights = 0    " don't highlight first char of errors$/;"	v
+g:ale_statusline_format	.vimrc	/^	let g:ale_statusline_format = ['x %d', '! %d', 'ok']$/;"	v
+g:buftabline_indicators	.vimrc	/^	let g:buftabline_indicators = 1$/;"	v
+g:fzf_buffers_jump	.vimrc	/^	let g:fzf_buffers_jump = 1$/;"	v
+g:fzf_commits_log_options	.vimrc	/^	let g:fzf_commits_log_options = '--graph --color=always --format="%C(auto)%h%d %s %C(black)%C(b/;"	v
+g:fzf_history_dir	.vimrc	/^	let g:fzf_history_dir = '~\/.local\/share\/fzf-history'$/;"	v
+g:fzf_layout	.vimrc	/^	let g:fzf_layout = { 'down': '~70%' }$/;"	v
+g:fzf_tags_command	.vimrc	/^	let g:fzf_tags_command = 'ctags'$/;"	v
+g:gutentags_ctags_executable	.vimrc	/^	  let g:gutentags_ctags_executable = '\/usr\/bin\/ctags'$/;"	v
+g:gutentags_ctags_extra_args	.vimrc	/^	let g:gutentags_ctags_extra_args = ['-R', '--exclude=node_modules', '--exclude=package-lock.jso/;"	v
+g:gutentags_ctags_tagfile	.vimrc	/^	let g:gutentags_ctags_tagfile = '.tags'$/;"	v
+g:javascript_plugin_flow	.vimrc	/^	let g:javascript_plugin_flow = 1    " allow Flow in .js files$/;"	v
+g:jsx_ext_required	.vimrc	/^	let g:jsx_ext_required = 1          " allow JSX in .js files$/;"	v
+g:lightline	.vimrc	/^	let g:lightline = {$/;"	v
+g:lightline#ale#indicator_checking	.vimrc	/^	let g:lightline#ale#indicator_checking = "\\uf110 "$/;"	v
+g:lightline#ale#indicator_errors	.vimrc	/^	let g:lightline#ale#indicator_errors = "\\uf05e "$/;"	v
+g:lightline#ale#indicator_infos	.vimrc	/^	let g:lightline#ale#indicator_infos = "\\uf129 "$/;"	v
+g:lightline#ale#indicator_ok	.vimrc	/^	let g:lightline#ale#indicator_ok = "\\uf00c "$/;"	v
+g:lightline#ale#indicator_warnings	.vimrc	/^	let g:lightline#ale#indicator_warnings = "\\uf071 "$/;"	v
+g:lightline#colorscheme#one#palette	.vimrc	/^	let g:lightline#colorscheme#one#palette = lightline#colorscheme#flatten(s:p)$/;"	v
+g:os	.vimrc	/^		let g:os = substitute(system('uname'), '\\n', '', '')$/;"	v
+g:os	.vimrc	/^	      let g:os = 'Windows'$/;"	v
+g:used_javascript_libs	.vimrc	/^	let g:used_javascript_libs = 'react,underscore,chai'$/;"	v
+g:ycm_filetype_specific_completion_to_disable	.vimrc	/^	let g:ycm_filetype_specific_completion_to_disable = {$/;"	v
+g:ycm_rust_src_path	.vimrc	/^	let g:ycm_rust_src_path = '\/usr\/local\/rust\/src'$/;"	v
+j	.vimrc	/^	nnoremap j gj$/;"	m
+k	.vimrc	/^	nnoremap k gk$/;"	m
+nord	alacritty.yml	/^  nord: &nord$/;"	a
+one_dark	alacritty.yml	/^  one_dark: &one_dark$/;"	a
+one_light	alacritty.yml	/^  one_light: &one_light$/;"	a
+onehalfdark	alacritty.yml	/^  onehalfdark: &onehalfdark$/;"	a
+onehalflight	alacritty.yml	/^  onehalflight: &onehalflight$/;"	a
+purify	alacritty.yml	/^  purify: &purify$/;"	a
+s:bg	.vimrc	/^	  let s:bg    = [ '#282c34', 235 ]$/;"	v
+s:bg	.vimrc	/^	  let s:bg    = [ '#fafafa', 255 ]$/;"	v
+s:blue	.vimrc	/^	let s:blue   = [ '#61afef', 75 ]$/;"	v
+s:buffer_lines	.vimrc	/^	function! s:buffer_lines()$/;"	f
+s:edit_file	.vimrc	/^	  function! s:edit_file(item)$/;"	f
+s:fg	.vimrc	/^	  let s:fg    = [ '#494b53', 238 ]$/;"	v
+s:fg	.vimrc	/^	  let s:fg    = [ '#abb2bf', 145 ]$/;"	v
+s:files	.vimrc	/^	  function! s:files()$/;"	f
+s:gray1	.vimrc	/^	  let s:gray1 = [ '#494b53', 238 ]$/;"	v
+s:gray1	.vimrc	/^	  let s:gray1 = [ '#5c6370', 241 ]$/;"	v
+s:gray2	.vimrc	/^	  let s:gray2 = [ '#2c323d', 235 ]$/;"	v
+s:gray2	.vimrc	/^	  let s:gray2 = [ '#f0f0f0', 255 ]$/;"	v
+s:gray3	.vimrc	/^	  let s:gray3 = [ '#3e4452', 240 ]$/;"	v
+s:gray3	.vimrc	/^	  let s:gray3 = [ '#d0d0d0', 250 ]$/;"	v
+s:green	.vimrc	/^	  let s:green = [ '#98c379', 35 ]$/;"	v
+s:green	.vimrc	/^	let s:green  = [ '#98c379', 76 ]$/;"	v
+s:line_handler	.vimrc	/^	function! s:line_handler(l)$/;"	f
+s:p	.vimrc	/^	  let s:p.inactive.left   = [ [ s:bg,  s:gray3 ], [ s:bg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	  let s:p.inactive.left   = [ [ s:gray1,  s:bg ], [ s:gray1, s:bg ] ]$/;"	v
+s:p	.vimrc	/^	  let s:p.inactive.middle = [ [ s:gray1, s:gray2 ] ]$/;"	v
+s:p	.vimrc	/^	  let s:p.inactive.middle = [ [ s:gray3, s:gray2 ] ]$/;"	v
+s:p	.vimrc	/^	  let s:p.inactive.right  = [ [ s:bg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	  let s:p.inactive.right  = [ [ s:gray1, s:bg ] ]$/;"	v
+s:p	.vimrc	/^	let s:p = {'normal': {}, 'inactive': {}, 'insert': {}, 'replace': {}, 'visual': {}, 'tabline': /;"	v
+s:p	.vimrc	/^	let s:p.insert.left    = [ [ s:bg, s:blue, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.insert.right   = [ [ s:bg, s:blue, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.normal.error   = [ [ s:red2, s:bg ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.normal.left    = [ [ s:bg, s:green, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.normal.middle  = [ [ s:fg, s:gray2 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.normal.right   = [ [ s:bg, s:green, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.normal.warning = [ [ s:yellow, s:bg ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.replace.left   = [ [ s:bg, s:red1, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.replace.right  = [ [ s:bg, s:red1, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.tabline.left   = [ [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.tabline.middle = [ [ s:gray3, s:gray2 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.tabline.right  = copy(s:p.normal.right)$/;"	v
+s:p	.vimrc	/^	let s:p.tabline.tabsel = [ [ s:bg, s:purple, 'bold' ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.visual.left    = [ [ s:bg, s:purple, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:p	.vimrc	/^	let s:p.visual.right   = [ [ s:bg, s:purple, 'bold' ], [ s:fg, s:gray3 ] ]$/;"	v
+s:prepend_icon	.vimrc	/^	  function! s:prepend_icon(candidates)$/;"	f
+s:purple	.vimrc	/^	let s:purple = [ '#c678dd', 176 ]$/;"	v
+s:red1	.vimrc	/^	let s:red1   = [ '#e06c75', 168 ]$/;"	v
+s:red2	.vimrc	/^	let s:red2   = [ '#be5046', 168 ]$/;"	v
+s:yellow	.vimrc	/^	let s:yellow = [ '#e5c07b', 180 ]$/;"	v
+t	.tmux.conf	/^bind -r C-h select-window -t :-$/;"	k
+t	.tmux.conf	/^bind -r C-l select-window -t :+$/;"	k
+tender	alacritty.yml	/^  tender: &tender$/;"	a
+tomorrownight	alacritty.yml	/^  tomorrownight: &tomorrownight$/;"	a

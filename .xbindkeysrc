@@ -1,16 +1,58 @@
 ###########################################
+# Map arrow hjkl to arrow keys
+#
 # remap keys tutorial -> http://xahlee.info/linux/linux_set_F2_F3_F4_to_cut_copy_paste.html
 # xvkbd -> https://aur.archlinux.org/packages/xvkbd
 # xbindkeys -> https://aur.archlinux.org/packages/xbindkeys_config-gtk2
 
+# LEFT
 "xvkbd -no-jump-pointer -xsendevent -text '\[Left]'"
 Alt+h
 
+"xvkbd -no-jump-pointer -xsendevent -text '\S\[Left]'"
+Shift+Alt+h
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\[Left]'"
+Control+Alt+h
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\S\[Left]'"
+Shift+Control+Alt+h
+
+# DOWN
 "xvkbd -no-jump-pointer -xsendevent -text '\[Down]'"
 Alt+j
 
+"xvkbd -no-jump-pointer -xsendevent -text '\S\[Down]'"
+Shift+Alt+j
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\[Down]'"
+Control+Alt+j
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\S\[Down]'"
+Shift+Control+Alt+j
+
+# UP
 "xvkbd -no-jump-pointer -xsendevent -text '\[Up]'"
 Alt+k
 
+"xvkbd -no-jump-pointer -xsendevent -text '\S\[Up]'"
+Shift+Alt+k
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\[Up]'"
+Control+Alt+k
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\S\[Up]'"
+Shift+Control+Alt+k
+
+# RIGHT
 "xvkbd -no-jump-pointer -xsendevent -text '\[Right]'"
 Alt+l
+
+"xvkbd -no-jump-pointer -xsendevent -text '\S\[Right]'"
+Shift+Alt+l
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\[Right]'"
+Control+Alt+l
+
+"xvkbd -no-jump-pointer -xsendevent -text '\C\S\[Right]'"
+Shift+Control+Alt+l

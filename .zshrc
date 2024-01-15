@@ -1,6 +1,6 @@
 
 # Set caps to ctrl
-setxkbmap -option caps:ctrl_modifier
+# setxkbmap -option caps:ctrl_modifier
 
 # Set ctrl to escape when tapped, ctrl when held
 # XXX fix xcape on arch
@@ -163,3 +163,11 @@ fpath+=($HOME/.zsh/pure)
 autoload -U promptinit; promptinit
 prompt pure
 
+
+# pnpm
+export PNPM_HOME="/home/z/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
